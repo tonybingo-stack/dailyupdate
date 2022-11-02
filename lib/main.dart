@@ -229,15 +229,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 } else if (snapshot.hasError) {
                   isLoading = false;
-                  // Future.delayed(Duration.zero, () {
-                  //   Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => const NotFoundPage(
-                  //             message:
-                  //                 "There is no goals defined for this user")),
-                  //   );
-                  // });
 
                   return const NotFoundPage(
                       message: "There is no goals defined for this user");
@@ -278,16 +269,20 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: <Widget>[
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  Constants.BODY_TEXT,
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontSize: Constants.BODY_TEXT_FONT,
-                                      fontWeight: FontWeight.bold),
+                              // ignore: prefer_const_literals_to_create_immutables
+                              children: [
+                                const Expanded(
+                                  child: Text(
+                                    Constants.BODY_TEXT,
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                        fontSize: Constants.BODY_TEXT_FONT,
+                                        fontWeight: FontWeight.bold),
+                                  ),
                                 ),
-                                SizedBox(width: 10),
-                                Icon(Icons.history),
+                                const Expanded(
+                                  child: Icon(Icons.history),
+                                ),
                               ],
                             ),
                             const SizedBox(height: 80),
@@ -373,16 +368,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              Constants.BODY_TEXT,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: Constants.BODY_TEXT_FONT,
-                                  fontWeight: FontWeight.bold),
+                          // ignore: prefer_const_literals_to_create_immutables
+                          children: [
+                            const Expanded(
+                              flex: 2,
+                              child: Text(
+                                Constants.BODY_TEXT,
+                                textAlign: TextAlign.end,
+                                style: TextStyle(
+                                    fontSize: Constants.BODY_TEXT_FONT,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
-                            SizedBox(width: 10),
-                            Icon(Icons.history),
+                            const Expanded(
+                              flex: 2,
+                              child: Icon(Icons.history),
+                            ),
                           ],
                         ),
                         const SizedBox(height: 80),
@@ -426,7 +427,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 msg: "Phone number required",
                                 toastLength: Toast.LENGTH_SHORT,
                                 timeInSecForIosWeb: 1,
-                                backgroundColor: Colors.black,
+                                backgroundColor:
+                                    const Color.fromARGB(255, 143, 141, 141),
                                 textColor: Colors.white,
                                 fontSize: 16.0,
                               );

@@ -35,7 +35,7 @@ class _MyTitleState extends State<MyTitle> {
           end: Alignment.bottomCenter,
         ),
       ),
-      height: 150,
+      // height: MediaQuery.of(context).size.height * 0.2,
       child: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(

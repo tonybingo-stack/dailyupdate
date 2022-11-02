@@ -97,30 +97,46 @@ class _GraphPageState extends State<GraphPage> {
       child: ListView(
         shrinkWrap: true,
         children: [
-          MyTitle(
-              taskCompletedCount: taskCompletedCount,
-              taskNotFollowedCount: taskNotFollowedCount),
-          const SizedBox(height: 30),
-          MyGraph(
-              followChartData: followChartData,
-              notFollowChartData: notFollowChartData),
-          const SizedBox(height: 40),
-          ElevatedButton(
-            style: style,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => CardPage(
-                          myInfo: widget.myInfo,
-                          myTasks: widget.myTasks,
-                          myTaskDetailsList: widget.myTaskDetailsList,
-                          mySuccessAlert: widget.mySuccessAlert,
-                        )),
-              );
-            },
-            child: const Text('Next'),
+          Expanded(
+            child: MyTitle(
+                taskCompletedCount: taskCompletedCount,
+                taskNotFollowedCount: taskNotFollowedCount),
           ),
+          const Expanded(
+              child: SizedBox(
+            height: 30,
+          )),
+          Expanded(
+            child: MyGraph(
+                followChartData: followChartData,
+                notFollowChartData: notFollowChartData),
+          ),
+          const Expanded(
+              child: SizedBox(
+            height: 30,
+          )),
+          Expanded(
+            child: ElevatedButton(
+              style: style,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CardPage(
+                            myInfo: widget.myInfo,
+                            myTasks: widget.myTasks,
+                            myTaskDetailsList: widget.myTaskDetailsList,
+                            mySuccessAlert: widget.mySuccessAlert,
+                          )),
+                );
+              },
+              child: const Text('Next'),
+            ),
+          ),
+          const Expanded(
+              child: SizedBox(
+            height: 30,
+          )),
         ],
       ),
     );

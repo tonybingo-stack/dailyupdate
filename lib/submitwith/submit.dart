@@ -142,10 +142,10 @@ class _SubmitPageState extends State<SubmitPage> {
                   "filled_for_followup": widget.isExtraQuestion ? "Yes" : "No",
                   "follow_rec": "NA",
                   "recommended_task": widget.myTasksList[i],
-                  "failure_reason": widget.failureReasonList
-                      .firstWhere(
-                          (element) => element.task == widget.myTasksList[i])
-                      .reason,
+                  // "failure_reason": widget.failureReasonList
+                  //     .firstWhere(
+                  //         (element) => element.task == widget.myTasksList[i])
+                  //     .reason,
                   "daily_comment": widget.dailyComment,
                   "followup_comment": myTaskCommentList[i].followup_comment,
                 });
@@ -283,38 +283,45 @@ class _SubmitPageState extends State<SubmitPage> {
       ));
     }
 
-    return isSubmitWithComment
-        ? FutureBuilder(
-            future: callSubmitWithCommentsAPI(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                isSubmitWithComment = false;
-                Future.delayed(Duration.zero, () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SuccessPage(
-                        mySuccessAlert: mySuccessAlert,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+        backgroundColor: Constants.APPBAR_COLOR,
+      ),
+      body: isSubmitWithComment
+          ? FutureBuilder(
+              future: callSubmitWithCommentsAPI(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  isSubmitWithComment = false;
+                  Future.delayed(Duration.zero, () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SuccessPage(
+                          mySuccessAlert: mySuccessAlert,
+                        ),
                       ),
+                    );
+                  });
+                } else if (snapshot.hasError) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '${snapshot.error}',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                              fontSize: Constants.BODY_TEXT_FONT,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
                     ),
                   );
-                });
-              } else if (snapshot.hasError) {
-                return Text(
-                  '${snapshot.error}',
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                      fontSize: Constants.BODY_TEXT_FONT,
-                      fontWeight: FontWeight.bold),
-                );
-              }
-              // By default, show a loading spinner.
-              return Scaffold(
-                appBar: AppBar(
-                  title: Text(widget.title),
-                  backgroundColor: Constants.APPBAR_COLOR,
-                ),
-                body: Center(
+                }
+                // By default, show a loading spinner.
+                return Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
@@ -323,16 +330,10 @@ class _SubmitPageState extends State<SubmitPage> {
                       Text("Performing Actions ..."),
                     ],
                   ),
-                ),
-              );
-            },
-          )
-        : Scaffold(
-            appBar: AppBar(
-              title: Text(widget.title),
-              backgroundColor: Constants.APPBAR_COLOR,
-            ),
-            body: Padding(
+                );
+              },
+            )
+          : Padding(
               padding: const EdgeInsets.all(30),
               child: ListView(
                 children: [
@@ -383,7 +384,8 @@ class _SubmitPageState extends State<SubmitPage> {
                           msg: "please complete all field",
                           toastLength: Toast.LENGTH_SHORT,
                           timeInSecForIosWeb: 1,
-                          backgroundColor: Colors.black,
+                          backgroundColor:
+                              const Color.fromARGB(255, 143, 141, 141),
                           textColor: Colors.white,
                           fontSize: 16.0,
                         );
@@ -395,7 +397,7 @@ class _SubmitPageState extends State<SubmitPage> {
                 ],
               ),
             ),
-          );
+    );
   }
 }
 

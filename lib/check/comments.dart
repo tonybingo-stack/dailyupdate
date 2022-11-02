@@ -87,279 +87,255 @@ class _CommentState extends State<Comment> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
-                                    // thumb color (round icon)
-                                    activeColor:
-                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                                    activeTrackColor: Constants
-                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                    inactiveThumbColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                    inactiveTrackColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                    splashRadius: 50.0,
-                                    // boolean variable value
-                                    value: checkedValue_1,
-                                    // changes the state of the switch
-                                    onChanged: (value) => setState(() {
-                                      checkedValue_1 = value;
-                                      widget.myCallback(
-                                        index,
-                                        task,
-                                        checkedValue_1,
-                                        checkedValue_2,
-                                        checkedValue_3,
-                                        checkedValue_4,
-                                        checkedValue_5,
-                                        checkedValue_6,
-                                        checkedValue_7,
-                                        checkedValue_8,
-                                        checkedValue_9,
-                                        checkedValue_10,
-                                        checkedValue_11,
-                                        checkedValue_12,
-                                        checkedValue_13,
-                                        commentController.text,
-                                      );
-                                    }),
-                                  ),
-                                  const Text("Too hard"),
-                                ]),
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: checkedValue_1,
+                              // changes the state of the switch
+                              onChanged: (value) => setState(() {
+                                checkedValue_1 = value;
+                                widget.myCallback(
+                                  index,
+                                  task,
+                                  checkedValue_1,
+                                  checkedValue_2,
+                                  checkedValue_3,
+                                  checkedValue_4,
+                                  checkedValue_5,
+                                  checkedValue_6,
+                                  checkedValue_7,
+                                  checkedValue_8,
+                                  checkedValue_9,
+                                  checkedValue_10,
+                                  checkedValue_11,
+                                  checkedValue_12,
+                                  checkedValue_13,
+                                  commentController.text,
+                                );
+                              }),
+                            ),
                           ),
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
-                                    // thumb color (round icon)
-                                    activeColor:
-                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                                    activeTrackColor: Constants
-                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                    inactiveThumbColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                    inactiveTrackColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                    splashRadius: 50.0,
-                                    // boolean variable value
-                                    value: checkedValue_2,
-                                    // changes the state of the switch
-                                    onChanged: (value) => setState(() {
-                                      checkedValue_2 = value;
-                                      widget.myCallback(
-                                        index,
-                                        task,
-                                        checkedValue_1,
-                                        checkedValue_2,
-                                        checkedValue_3,
-                                        checkedValue_4,
-                                        checkedValue_5,
-                                        checkedValue_6,
-                                        checkedValue_7,
-                                        checkedValue_8,
-                                        checkedValue_9,
-                                        checkedValue_10,
-                                        checkedValue_11,
-                                        checkedValue_12,
-                                        checkedValue_13,
-                                        commentController.text,
-                                      );
-                                    }),
-                                  ),
-                                  const Text("Couldn't find time"),
-                                ]),
+                          const Expanded(
+                            child: Text("Too hard"),
+                          ),
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: checkedValue_2,
+                              // changes the state of the switch
+                              onChanged: (value) => setState(() {
+                                checkedValue_2 = value;
+                                widget.myCallback(
+                                  index,
+                                  task,
+                                  checkedValue_1,
+                                  checkedValue_2,
+                                  checkedValue_3,
+                                  checkedValue_4,
+                                  checkedValue_5,
+                                  checkedValue_6,
+                                  checkedValue_7,
+                                  checkedValue_8,
+                                  checkedValue_9,
+                                  checkedValue_10,
+                                  checkedValue_11,
+                                  checkedValue_12,
+                                  checkedValue_13,
+                                  commentController.text,
+                                );
+                              }),
+                            ),
+                          ),
+                          const Expanded(
+                            child: Text("Couldn't find time"),
                           ),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
-                                    // thumb color (round icon)
-                                    activeColor:
-                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                                    activeTrackColor: Constants
-                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                    inactiveThumbColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                    inactiveTrackColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                    splashRadius: 50.0,
-                                    // boolean variable value
-                                    value: checkedValue_3,
-                                    // changes the state of the switch
-                                    onChanged: (value) => setState(() {
-                                      checkedValue_3 = value;
-                                      widget.myCallback(
-                                        index,
-                                        task,
-                                        checkedValue_1,
-                                        checkedValue_2,
-                                        checkedValue_3,
-                                        checkedValue_4,
-                                        checkedValue_5,
-                                        checkedValue_6,
-                                        checkedValue_7,
-                                        checkedValue_8,
-                                        checkedValue_9,
-                                        checkedValue_10,
-                                        checkedValue_11,
-                                        checkedValue_12,
-                                        checkedValue_13,
-                                        commentController.text,
-                                      );
-                                    }),
-                                  ),
-                                  const Text("Work"),
-                                ]),
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: checkedValue_3,
+                              // changes the state of the switch
+                              onChanged: (value) => setState(() {
+                                checkedValue_3 = value;
+                                widget.myCallback(
+                                  index,
+                                  task,
+                                  checkedValue_1,
+                                  checkedValue_2,
+                                  checkedValue_3,
+                                  checkedValue_4,
+                                  checkedValue_5,
+                                  checkedValue_6,
+                                  checkedValue_7,
+                                  checkedValue_8,
+                                  checkedValue_9,
+                                  checkedValue_10,
+                                  checkedValue_11,
+                                  checkedValue_12,
+                                  checkedValue_13,
+                                  commentController.text,
+                                );
+                              }),
+                            ),
                           ),
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
-                                    // thumb color (round icon)
-                                    activeColor:
-                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                                    activeTrackColor: Constants
-                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                    inactiveThumbColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                    inactiveTrackColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                    splashRadius: 50.0,
-                                    // boolean variable value
-                                    value: checkedValue_4,
-                                    // changes the state of the switch
-                                    onChanged: (value) => setState(() {
-                                      checkedValue_4 = value;
-                                      widget.myCallback(
-                                        index,
-                                        task,
-                                        checkedValue_1,
-                                        checkedValue_2,
-                                        checkedValue_3,
-                                        checkedValue_4,
-                                        checkedValue_5,
-                                        checkedValue_6,
-                                        checkedValue_7,
-                                        checkedValue_8,
-                                        checkedValue_9,
-                                        checkedValue_10,
-                                        checkedValue_11,
-                                        checkedValue_12,
-                                        checkedValue_13,
-                                        commentController.text,
-                                      );
-                                    }),
-                                  ),
-                                  const Text("Injury/Sickness"),
-                                ]),
+                          const Expanded(
+                            child: Text("Work"),
+                          ),
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: checkedValue_4,
+                              // changes the state of the switch
+                              onChanged: (value) => setState(() {
+                                checkedValue_4 = value;
+                                widget.myCallback(
+                                  index,
+                                  task,
+                                  checkedValue_1,
+                                  checkedValue_2,
+                                  checkedValue_3,
+                                  checkedValue_4,
+                                  checkedValue_5,
+                                  checkedValue_6,
+                                  checkedValue_7,
+                                  checkedValue_8,
+                                  checkedValue_9,
+                                  checkedValue_10,
+                                  checkedValue_11,
+                                  checkedValue_12,
+                                  checkedValue_13,
+                                  commentController.text,
+                                );
+                              }),
+                            ),
+                          ),
+                          const Expanded(
+                            child: Text("Injury/Sickness"),
                           ),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
-                                    // thumb color (round icon)
-                                    activeColor:
-                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                                    activeTrackColor: Constants
-                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                    inactiveThumbColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                    inactiveTrackColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                    splashRadius: 50.0,
-                                    // boolean variable value
-                                    value: checkedValue_5,
-                                    // changes the state of the switch
-                                    onChanged: (value) => setState(() {
-                                      checkedValue_5 = value;
-                                      widget.myCallback(
-                                        index,
-                                        task,
-                                        checkedValue_1,
-                                        checkedValue_2,
-                                        checkedValue_3,
-                                        checkedValue_4,
-                                        checkedValue_5,
-                                        checkedValue_6,
-                                        checkedValue_7,
-                                        checkedValue_8,
-                                        checkedValue_9,
-                                        checkedValue_10,
-                                        checkedValue_11,
-                                        checkedValue_12,
-                                        checkedValue_13,
-                                        commentController.text,
-                                      );
-                                    }),
-                                  ),
-                                  const Text("Forgot"),
-                                ]),
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: checkedValue_5,
+                              // changes the state of the switch
+                              onChanged: (value) => setState(() {
+                                checkedValue_5 = value;
+                                widget.myCallback(
+                                  index,
+                                  task,
+                                  checkedValue_1,
+                                  checkedValue_2,
+                                  checkedValue_3,
+                                  checkedValue_4,
+                                  checkedValue_5,
+                                  checkedValue_6,
+                                  checkedValue_7,
+                                  checkedValue_8,
+                                  checkedValue_9,
+                                  checkedValue_10,
+                                  checkedValue_11,
+                                  checkedValue_12,
+                                  checkedValue_13,
+                                  commentController.text,
+                                );
+                              }),
+                            ),
                           ),
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
-                                    // thumb color (round icon)
-                                    activeColor:
-                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                                    activeTrackColor: Constants
-                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                    inactiveThumbColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                    inactiveTrackColor: Constants
-                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                    splashRadius: 50.0,
-                                    // boolean variable value
-                                    value: checkedValue_6,
-                                    // changes the state of the switch
-                                    onChanged: (value) => setState(() {
-                                      checkedValue_6 = value;
-                                      widget.myCallback(
-                                        index,
-                                        task,
-                                        checkedValue_1,
-                                        checkedValue_2,
-                                        checkedValue_3,
-                                        checkedValue_4,
-                                        checkedValue_5,
-                                        checkedValue_6,
-                                        checkedValue_7,
-                                        checkedValue_8,
-                                        checkedValue_9,
-                                        checkedValue_10,
-                                        checkedValue_11,
-                                        checkedValue_12,
-                                        checkedValue_13,
-                                        commentController.text,
-                                      );
-                                    }),
-                                  ),
-                                  const Text("No mention"),
-                                ]),
+                          const Expanded(
+                            child: Text("Forgot"),
+                          ),
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: checkedValue_6,
+                              // changes the state of the switch
+                              onChanged: (value) => setState(() {
+                                checkedValue_6 = value;
+                                widget.myCallback(
+                                  index,
+                                  task,
+                                  checkedValue_1,
+                                  checkedValue_2,
+                                  checkedValue_3,
+                                  checkedValue_4,
+                                  checkedValue_5,
+                                  checkedValue_6,
+                                  checkedValue_7,
+                                  checkedValue_8,
+                                  checkedValue_9,
+                                  checkedValue_10,
+                                  checkedValue_11,
+                                  checkedValue_12,
+                                  checkedValue_13,
+                                  commentController.text,
+                                );
+                              }),
+                            ),
+                          ),
+                          const Expanded(
+                            child: Text("No mention"),
                           ),
                         ],
                       ),
@@ -367,95 +343,87 @@ class _CommentState extends State<Comment> {
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                SizedBox(
-                                  width: 185,
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Switch(
-                                          // thumb color (round icon)
-                                          activeColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_COLOR,
-                                          activeTrackColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                          inactiveThumbColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                          inactiveTrackColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                          splashRadius: 50.0,
-                                          // boolean variable value
-                                          value: checkedValue_7,
-                                          // changes the state of the switch
-                                          onChanged: (value) => setState(() {
-                                            checkedValue_7 = value;
-                                            widget.myCallback(
-                                              index,
-                                              task,
-                                              checkedValue_1,
-                                              checkedValue_2,
-                                              checkedValue_3,
-                                              checkedValue_4,
-                                              checkedValue_5,
-                                              checkedValue_6,
-                                              checkedValue_7,
-                                              checkedValue_8,
-                                              checkedValue_9,
-                                              checkedValue_10,
-                                              checkedValue_11,
-                                              checkedValue_12,
-                                              checkedValue_13,
-                                              commentController.text,
-                                            );
-                                          }),
-                                        ),
-                                        const Text("Too tired"),
-                                      ]),
+                                Expanded(
+                                  child: Switch(
+                                    // thumb color (round icon)
+                                    activeColor:
+                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                                    activeTrackColor: Constants
+                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                                    inactiveThumbColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                                    inactiveTrackColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                                    splashRadius: 50.0,
+                                    // boolean variable value
+                                    value: checkedValue_7,
+                                    // changes the state of the switch
+                                    onChanged: (value) => setState(() {
+                                      checkedValue_7 = value;
+                                      widget.myCallback(
+                                        index,
+                                        task,
+                                        checkedValue_1,
+                                        checkedValue_2,
+                                        checkedValue_3,
+                                        checkedValue_4,
+                                        checkedValue_5,
+                                        checkedValue_6,
+                                        checkedValue_7,
+                                        checkedValue_8,
+                                        checkedValue_9,
+                                        checkedValue_10,
+                                        checkedValue_11,
+                                        checkedValue_12,
+                                        checkedValue_13,
+                                        commentController.text,
+                                      );
+                                    }),
+                                  ),
                                 ),
-                                SizedBox(
-                                  width: 185,
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Switch(
-                                          // thumb color (round icon)
-                                          activeColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_COLOR,
-                                          activeTrackColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                          inactiveThumbColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                          inactiveTrackColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                          splashRadius: 50.0,
-                                          // boolean variable value
-                                          value: checkedValue_8,
-                                          // changes the state of the switch
-                                          onChanged: (value) => setState(() {
-                                            checkedValue_8 = value;
-                                            widget.myCallback(
-                                              index,
-                                              task,
-                                              checkedValue_1,
-                                              checkedValue_2,
-                                              checkedValue_3,
-                                              checkedValue_4,
-                                              checkedValue_5,
-                                              checkedValue_6,
-                                              checkedValue_7,
-                                              checkedValue_8,
-                                              checkedValue_9,
-                                              checkedValue_10,
-                                              checkedValue_11,
-                                              checkedValue_12,
-                                              checkedValue_13,
-                                              commentController.text,
-                                            );
-                                          }),
-                                        ),
-                                        const Text("Mental health"),
-                                      ]),
+                                const Expanded(
+                                  child: Text("Too tired"),
+                                ),
+                                Expanded(
+                                  child: Switch(
+                                    // thumb color (round icon)
+                                    activeColor:
+                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                                    activeTrackColor: Constants
+                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                                    inactiveThumbColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                                    inactiveTrackColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                                    splashRadius: 50.0,
+                                    // boolean variable value
+                                    value: checkedValue_8,
+                                    // changes the state of the switch
+                                    onChanged: (value) => setState(() {
+                                      checkedValue_8 = value;
+                                      widget.myCallback(
+                                        index,
+                                        task,
+                                        checkedValue_1,
+                                        checkedValue_2,
+                                        checkedValue_3,
+                                        checkedValue_4,
+                                        checkedValue_5,
+                                        checkedValue_6,
+                                        checkedValue_7,
+                                        checkedValue_8,
+                                        checkedValue_9,
+                                        checkedValue_10,
+                                        checkedValue_11,
+                                        checkedValue_12,
+                                        checkedValue_13,
+                                        commentController.text,
+                                      );
+                                    }),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: Text("Mental health"),
                                 ),
                               ],
                             )
@@ -464,205 +432,8 @@ class _CommentState extends State<Comment> {
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                SizedBox(
-                                  width: 185,
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Switch(
-                                          // thumb color (round icon)
-                                          activeColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_COLOR,
-                                          activeTrackColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                          inactiveThumbColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                          inactiveTrackColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                          splashRadius: 50.0,
-                                          // boolean variable value
-                                          value: checkedValue_9,
-                                          // changes the state of the switch
-                                          onChanged: (value) => setState(() {
-                                            checkedValue_9 = value;
-                                            widget.myCallback(
-                                              index,
-                                              task,
-                                              checkedValue_1,
-                                              checkedValue_2,
-                                              checkedValue_3,
-                                              checkedValue_4,
-                                              checkedValue_5,
-                                              checkedValue_6,
-                                              checkedValue_7,
-                                              checkedValue_8,
-                                              checkedValue_9,
-                                              checkedValue_10,
-                                              checkedValue_11,
-                                              checkedValue_12,
-                                              checkedValue_13,
-                                              commentController.text,
-                                            );
-                                          }),
-                                        ),
-                                        const Text("Family/Social"),
-                                      ]),
-                                ),
-                                SizedBox(
-                                  width: 185,
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Switch(
-                                          // thumb color (round icon)
-                                          activeColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_COLOR,
-                                          activeTrackColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                          inactiveThumbColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                          inactiveTrackColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                          splashRadius: 50.0,
-                                          // boolean variable value
-                                          value: checkedValue_10,
-                                          // changes the state of the switch
-                                          onChanged: (value) => setState(() {
-                                            checkedValue_10 = value;
-                                            widget.myCallback(
-                                              index,
-                                              task,
-                                              checkedValue_1,
-                                              checkedValue_2,
-                                              checkedValue_3,
-                                              checkedValue_4,
-                                              checkedValue_5,
-                                              checkedValue_6,
-                                              checkedValue_7,
-                                              checkedValue_8,
-                                              checkedValue_9,
-                                              checkedValue_10,
-                                              checkedValue_11,
-                                              checkedValue_12,
-                                              checkedValue_13,
-                                              commentController.text,
-                                            );
-                                          }),
-                                        ),
-                                        const Text("Travelling"),
-                                      ]),
-                                ),
-                              ],
-                            )
-                          : const SizedBox(),
-                      isMore
-                          ? Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SizedBox(
-                                  width: 185,
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Switch(
-                                          // thumb color (round icon)
-                                          activeColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_COLOR,
-                                          activeTrackColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                          inactiveThumbColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                          inactiveTrackColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                          splashRadius: 50.0,
-                                          // boolean variable value
-                                          value: checkedValue_11,
-                                          // changes the state of the switch
-                                          onChanged: (value) => setState(() {
-                                            checkedValue_11 = value;
-                                            widget.myCallback(
-                                              index,
-                                              task,
-                                              checkedValue_1,
-                                              checkedValue_2,
-                                              checkedValue_3,
-                                              checkedValue_4,
-                                              checkedValue_5,
-                                              checkedValue_6,
-                                              checkedValue_7,
-                                              checkedValue_8,
-                                              checkedValue_9,
-                                              checkedValue_10,
-                                              checkedValue_11,
-                                              checkedValue_12,
-                                              checkedValue_13,
-                                              commentController.text,
-                                            );
-                                          }),
-                                        ),
-                                        const Text("Unexpected"),
-                                      ]),
-                                ),
-                                SizedBox(
-                                  width: 185,
-                                  child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: [
-                                        Switch(
-                                          // thumb color (round icon)
-                                          activeColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_COLOR,
-                                          activeTrackColor: Constants
-                                              .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                                          inactiveThumbColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                                          inactiveTrackColor: Constants
-                                              .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                                          splashRadius: 50.0,
-                                          // boolean variable value
-                                          value: checkedValue_12,
-                                          // changes the state of the switch
-                                          onChanged: (value) => setState(() {
-                                            checkedValue_12 = value;
-                                            widget.myCallback(
-                                              index,
-                                              task,
-                                              checkedValue_1,
-                                              checkedValue_2,
-                                              checkedValue_3,
-                                              checkedValue_4,
-                                              checkedValue_5,
-                                              checkedValue_6,
-                                              checkedValue_7,
-                                              checkedValue_8,
-                                              checkedValue_9,
-                                              checkedValue_10,
-                                              checkedValue_11,
-                                              checkedValue_12,
-                                              checkedValue_13,
-                                              commentController.text,
-                                            );
-                                          }),
-                                        ),
-                                        const Text("Not enjoying goal"),
-                                      ]),
-                                ),
-                              ],
-                            )
-                          : const SizedBox(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
+                                Expanded(
+                                  child: Switch(
                                     // thumb color (round icon)
                                     activeColor:
                                         Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
@@ -674,10 +445,10 @@ class _CommentState extends State<Comment> {
                                         .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
                                     splashRadius: 50.0,
                                     // boolean variable value
-                                    value: checkedValue_13,
+                                    value: checkedValue_9,
                                     // changes the state of the switch
                                     onChanged: (value) => setState(() {
-                                      checkedValue_13 = value;
+                                      checkedValue_9 = value;
                                       widget.myCallback(
                                         index,
                                         task,
@@ -698,15 +469,12 @@ class _CommentState extends State<Comment> {
                                       );
                                     }),
                                   ),
-                                  const Text("Other"),
-                                ]),
-                          ),
-                          SizedBox(
-                            width: 185,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Switch(
+                                ),
+                                const Expanded(
+                                  child: Text("Family/Social Engagement"),
+                                ),
+                                Expanded(
+                                  child: Switch(
                                     // thumb color (round icon)
                                     activeColor:
                                         Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
@@ -718,13 +486,189 @@ class _CommentState extends State<Comment> {
                                         .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
                                     splashRadius: 50.0,
                                     // boolean variable value
-                                    value: isMore,
+                                    value: checkedValue_10,
                                     // changes the state of the switch
-                                    onChanged: (value) =>
-                                        setState(() => isMore = value),
+                                    onChanged: (value) => setState(() {
+                                      checkedValue_10 = value;
+                                      widget.myCallback(
+                                        index,
+                                        task,
+                                        checkedValue_1,
+                                        checkedValue_2,
+                                        checkedValue_3,
+                                        checkedValue_4,
+                                        checkedValue_5,
+                                        checkedValue_6,
+                                        checkedValue_7,
+                                        checkedValue_8,
+                                        checkedValue_9,
+                                        checkedValue_10,
+                                        checkedValue_11,
+                                        checkedValue_12,
+                                        checkedValue_13,
+                                        commentController.text,
+                                      );
+                                    }),
                                   ),
-                                  const Text("More options..."),
-                                ]),
+                                ),
+                                const Expanded(
+                                  child: Text("Travelling"),
+                                ),
+                              ],
+                            )
+                          : const SizedBox(),
+                      isMore
+                          ? Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Expanded(
+                                  child: Switch(
+                                    // thumb color (round icon)
+                                    activeColor:
+                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                                    activeTrackColor: Constants
+                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                                    inactiveThumbColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                                    inactiveTrackColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                                    splashRadius: 50.0,
+                                    // boolean variable value
+                                    value: checkedValue_11,
+                                    // changes the state of the switch
+                                    onChanged: (value) => setState(() {
+                                      checkedValue_11 = value;
+                                      widget.myCallback(
+                                        index,
+                                        task,
+                                        checkedValue_1,
+                                        checkedValue_2,
+                                        checkedValue_3,
+                                        checkedValue_4,
+                                        checkedValue_5,
+                                        checkedValue_6,
+                                        checkedValue_7,
+                                        checkedValue_8,
+                                        checkedValue_9,
+                                        checkedValue_10,
+                                        checkedValue_11,
+                                        checkedValue_12,
+                                        checkedValue_13,
+                                        commentController.text,
+                                      );
+                                    }),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: Text("Unexpected Situation"),
+                                ),
+                                Expanded(
+                                  child: Switch(
+                                    // thumb color (round icon)
+                                    activeColor:
+                                        Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                                    activeTrackColor: Constants
+                                        .TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                                    inactiveThumbColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                                    inactiveTrackColor: Constants
+                                        .TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                                    splashRadius: 50.0,
+                                    // boolean variable value
+                                    value: checkedValue_12,
+                                    // changes the state of the switch
+                                    onChanged: (value) => setState(() {
+                                      checkedValue_12 = value;
+                                      widget.myCallback(
+                                        index,
+                                        task,
+                                        checkedValue_1,
+                                        checkedValue_2,
+                                        checkedValue_3,
+                                        checkedValue_4,
+                                        checkedValue_5,
+                                        checkedValue_6,
+                                        checkedValue_7,
+                                        checkedValue_8,
+                                        checkedValue_9,
+                                        checkedValue_10,
+                                        checkedValue_11,
+                                        checkedValue_12,
+                                        checkedValue_13,
+                                        commentController.text,
+                                      );
+                                    }),
+                                  ),
+                                ),
+                                const Expanded(
+                                  child: Text("Not enjoying goal"),
+                                ),
+                              ],
+                            )
+                          : const SizedBox(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: checkedValue_13,
+                              // changes the state of the switch
+                              onChanged: (value) => setState(() {
+                                checkedValue_13 = value;
+                                widget.myCallback(
+                                  index,
+                                  task,
+                                  checkedValue_1,
+                                  checkedValue_2,
+                                  checkedValue_3,
+                                  checkedValue_4,
+                                  checkedValue_5,
+                                  checkedValue_6,
+                                  checkedValue_7,
+                                  checkedValue_8,
+                                  checkedValue_9,
+                                  checkedValue_10,
+                                  checkedValue_11,
+                                  checkedValue_12,
+                                  checkedValue_13,
+                                  commentController.text,
+                                );
+                              }),
+                            ),
+                          ),
+                          const Expanded(
+                            child: Text("Other"),
+                          ),
+                          Expanded(
+                            child: Switch(
+                              // thumb color (round icon)
+                              activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                              activeTrackColor:
+                                  Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                              inactiveThumbColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                              inactiveTrackColor:
+                                  Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                              splashRadius: 50.0,
+                              // boolean variable value
+                              value: isMore,
+                              // changes the state of the switch
+                              onChanged: (value) =>
+                                  setState(() => isMore = value),
+                            ),
+                          ),
+                          const Expanded(
+                            child: Text("More options..."),
                           ),
                         ],
                       ),
@@ -739,24 +683,24 @@ class _CommentState extends State<Comment> {
                                 // keyboardType: TextInputType.multiline,
                                 // maxLines: 6,
                                 onChanged: (value) {
-                                   widget.myCallback(
-                                        index,
-                                        task,
-                                        checkedValue_1,
-                                        checkedValue_2,
-                                        checkedValue_3,
-                                        checkedValue_4,
-                                        checkedValue_5,
-                                        checkedValue_6,
-                                        checkedValue_7,
-                                        checkedValue_8,
-                                        checkedValue_9,
-                                        checkedValue_10,
-                                        checkedValue_11,
-                                        checkedValue_12,
-                                        checkedValue_13,
-                                        commentController.text,
-                                      );
+                                  widget.myCallback(
+                                    index,
+                                    task,
+                                    checkedValue_1,
+                                    checkedValue_2,
+                                    checkedValue_3,
+                                    checkedValue_4,
+                                    checkedValue_5,
+                                    checkedValue_6,
+                                    checkedValue_7,
+                                    checkedValue_8,
+                                    checkedValue_9,
+                                    checkedValue_10,
+                                    checkedValue_11,
+                                    checkedValue_12,
+                                    checkedValue_13,
+                                    commentController.text,
+                                  );
                                 },
                               ),
                             )

@@ -69,6 +69,7 @@ class _CardPageState extends State<CardPage> {
       body: Padding(
         padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
               decoration: BoxDecoration(
@@ -147,31 +148,28 @@ class _CardPageState extends State<CardPage> {
               enableSwipeUp: true,
               enableSwipeDown: false,
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  FloatingActionButton(
-                    heroTag: 'btn_no',
-                    onPressed: () => cardController.triggerSwipeLeft(),
-                    backgroundColor: Constants.BUTTON_COLOR,
-                    child: const Icon(Icons.thumb_down_off_alt),
-                  ),
-                  FloatingActionButton(
-                    heroTag: 'btn_block',
-                    onPressed: () => cardController.triggerSwipeUp(),
-                    backgroundColor: Constants.BUTTON_COLOR,
-                    child: const Icon(Icons.block),
-                  ),
-                  FloatingActionButton(
-                    heroTag: 'btn_yes',
-                    onPressed: () => cardController.triggerSwipeRight(),
-                    backgroundColor: Constants.BUTTON_COLOR,
-                    child: const Icon(Icons.thumb_up_off_alt),
-                  ),
-                ],
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FloatingActionButton(
+                  heroTag: 'btn_no',
+                  onPressed: () => cardController.triggerSwipeLeft(),
+                  backgroundColor: Constants.BUTTON_COLOR,
+                  child: const Icon(Icons.thumb_down_off_alt),
+                ),
+                FloatingActionButton(
+                  heroTag: 'btn_block',
+                  onPressed: () => cardController.triggerSwipeUp(),
+                  backgroundColor: Constants.BUTTON_COLOR,
+                  child: const Icon(Icons.block),
+                ),
+                FloatingActionButton(
+                  heroTag: 'btn_yes',
+                  onPressed: () => cardController.triggerSwipeRight(),
+                  backgroundColor: Constants.BUTTON_COLOR,
+                  child: const Icon(Icons.thumb_up_off_alt),
+                ),
+              ],
             ),
           ],
         ),

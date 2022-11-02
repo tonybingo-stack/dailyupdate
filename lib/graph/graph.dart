@@ -40,7 +40,7 @@ class _MyGraphState extends State<MyGraph> {
           end: Alignment.bottomCenter,
         ),
       ),
-      height: 400,
+      height: MediaQuery.of(context).size.width * 0.8,
       child: Padding(
           padding: const EdgeInsets.fromLTRB(10, 30, 10, 30),
           child: SfCartesianChart(

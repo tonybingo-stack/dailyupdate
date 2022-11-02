@@ -34,11 +34,9 @@ class _NotFoundPageState extends State<NotFoundPage> {
     );
     return Padding(
       padding: const EdgeInsets.all(50),
-      child: ListView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(
-            height: 200,
-          ),
           const Icon(
             Icons.no_accounts,
             color: Color.fromARGB(200, 197, 26, 26),

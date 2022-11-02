@@ -385,66 +385,89 @@ class _CheckPageState extends State<CheckPage> {
                   ),
                 ),
                 const SizedBox(height: 30),
-                Center(
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ElevatedButton(
-                        style: style,
-                        onPressed: () {
-                          if (isValid) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SubmitPage(
-                                      myInfo: myInfo,
-                                      yesTaskList: yesTaskList,
-                                      myTaskDetailsList: myTaskDetailsList,
-                                      myTasksList: myTasksList,
-                                      naTaskList: naTaskList,
-                                      noTaskList: noTaskList,
-                                      myTaskStartTime: widget.myTaskStartTime,
-                                      failureReasonList: failureReasonList,
-                                      dailyComment: commentController.text,
-                                      mySuccessAlert: mySuccessAlert,
-                                      isExtraQuestion: isExtraQuestion)),
-                            );
-                          } else {
-                            Fluttertoast.showToast(
-                              msg:
-                                  "please mark the closest reason or reasons for not doing the task",
-                              toastLength: Toast.LENGTH_SHORT,
-                              timeInSecForIosWeb: 1,
-                              backgroundColor: Colors.black,
-                              textColor: Colors.white,
-                              fontSize: 16.0,
-                            );
-                          }
-                        },
-                        child: const Text('Submit with Comments'),
+                      Expanded(
+                        flex: 3,
+                        child: ElevatedButton(
+                          style: style,
+                          onPressed: () {
+                            if (isValid) {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SubmitPage(
+                                        myInfo: myInfo,
+                                        yesTaskList: yesTaskList,
+                                        myTaskDetailsList: myTaskDetailsList,
+                                        myTasksList: myTasksList,
+                                        naTaskList: naTaskList,
+                                        noTaskList: noTaskList,
+                                        myTaskStartTime: widget.myTaskStartTime,
+                                        failureReasonList: failureReasonList,
+                                        dailyComment: commentController.text,
+                                        mySuccessAlert: mySuccessAlert,
+                                        isExtraQuestion: isExtraQuestion)),
+                              );
+                            } else {
+                              Fluttertoast.showToast(
+                                msg:
+                                    "please mark the closest reason or reasons for not doing the task",
+                                toastLength: Toast.LENGTH_SHORT,
+                                timeInSecForIosWeb: 1,
+                                backgroundColor:
+                                    const Color.fromARGB(255, 143, 141, 141),
+                                textColor: Colors.white,
+                                fontSize: 16.0,
+                              );
+                            }
+                          },
+                          child: const Text(
+                            'Submit with Comments',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ),
-                      ElevatedButton(
-                        style: style,
-                        onPressed: submitWithNoComment
-                            ? (() {
-                                if (isValid) {
-                                  setState(() {
-                                    isSubmitWithNoComments = true;
-                                  });
-                                } else {
-                                  Fluttertoast.showToast(
-                                    msg:
-                                        "please mark the closest reason or reasons for not doing the task",
-                                    toastLength: Toast.LENGTH_SHORT,
-                                    timeInSecForIosWeb: 1,
-                                    backgroundColor: Colors.black,
-                                    textColor: Colors.white,
-                                    fontSize: 16.0,
-                                  );
-                                }
-                              })
-                            : null,
-                        child: const Text('Submit'),
+                      const Expanded(
+                        flex: 1,
+                        child: SizedBox(
+                          width: 10,
+                        ),
+                      ),
+                      Expanded(
+                        flex: 3,
+                        child: ElevatedButton(
+                          style: style,
+                          onPressed: submitWithNoComment
+                              ? (() {
+                                  if (isValid) {
+                                    setState(() {
+                                      isSubmitWithNoComments = true;
+                                    });
+                                  } else {
+                                    Fluttertoast.showToast(
+                                      msg:
+                                          "please mark the closest reason or reasons for not doing the task",
+                                      toastLength: Toast.LENGTH_SHORT,
+                                      timeInSecForIosWeb: 1,
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 143, 141, 141),
+                                      textColor: Colors.white,
+                                      fontSize: 16.0,
+                                    );
+                                  }
+                                })
+                              : null,
+                          child: const Text(
+                            'Submit with no comments',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ),
                     ],
                   ),

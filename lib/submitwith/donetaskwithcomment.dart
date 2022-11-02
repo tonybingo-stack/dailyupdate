@@ -77,27 +77,48 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                   fontSize: 20,
                 )),
             const Divider(color: Colors.black),
-            Row(mainAxisAlignment: MainAxisAlignment.start, children: const [
-              Icon(
-                Icons.help,
-                color: Color(0xFF666065),
-                size: 24,
-              ),
-              SizedBox(width: 5),
-              Text("How satisfied are you with the Recommendation?",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14,
-                  )),
-            ]),
-            const SizedBox(height: 20),
             Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Text("Not happy"),
-                  Text("It's okay"),
-                  Text("Very happy"),
-                ]),
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                Expanded(
+                  flex: 5,
+                  child: Icon(
+                    Icons.help,
+                    color: Color(0xFF666065),
+                    size: 24,
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+                Expanded(
+                  flex: 50,
+                  child: Text(
+                    "How satisfied are you with the Recommendation?",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Expanded(
+                  child: Text("Not happy"),
+                ),
+                Expanded(
+                  child: Text("It's okay"),
+                ),
+                Expanded(
+                  child: Text("Very happy"),
+                ),
+              ],
+            ),
             Slider(
               value: _currentSliderValue,
               max: 10,
@@ -127,18 +148,27 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: const [
-                      Icon(
-                        Icons.help,
-                        color: Color(0xFF666065),
-                        size: 24,
+                      Expanded(
+                        flex: 5,
+                        child: Icon(
+                          Icons.help,
+                          color: Color(0xFF666065),
+                          size: 24,
+                        ),
                       ),
-                      SizedBox(width: 5),
-                      Text(
-                          "From 0-10, how would you rate your effort in achieving this weeks goals? ",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 14,
-                          )),
+                      Expanded(
+                        flex: 1,
+                        child: SizedBox(),
+                      ),
+                      Expanded(
+                        flex: 50,
+                        child: Text(
+                            "From 0-10, how would you rate your effort in achieving this weeks goals? ",
+                            textAlign: TextAlign.start,
+                            style: TextStyle(
+                              fontSize: 14,
+                            )),
+                      ),
                     ],
                   )
                 : const SizedBox(),
@@ -170,399 +200,391 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                 : const SizedBox(),
             widget.isExtraQuestion
                 ? Text(_currentFollowUpCommentValue.toInt().toString())
-                : SizedBox(),
-            Row(mainAxisAlignment: MainAxisAlignment.start, children: const [
-              Icon(
-                Icons.help,
-                color: Color(0xFF666065),
-                size: 24,
-              ),
-              SizedBox(width: 5),
-              Text("How would you describe the Recommendation?",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 14,
-                  )),
-            ]),
+                : const SizedBox(),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_1,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_1 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Fun"),
-                      ]),
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: const [
+                Expanded(
+                  flex: 5,
+                  child: Icon(
+                    Icons.help,
+                    color: Color(0xFF666065),
+                    size: 24,
+                  ),
                 ),
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_2,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_2 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Not Good"),
-                      ]),
+                Expanded(
+                  flex: 1,
+                  child: SizedBox(),
+                ),
+                Expanded(
+                  flex: 50,
+                  child: Text(
+                    "How would you describe the Recommendation?",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(
+                      fontSize: 14,
+                    ),
+                  ),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_3,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_3 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Easy"),
-                      ]),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_1,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_1 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
                 ),
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_4,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_4 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Boring"),
-                      ]),
+                const Expanded(
+                  child: Text("Fun"),
+                ),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_2,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_2 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
+                ),
+                const Expanded(
+                  child: Text("Not Good"),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_5,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_5 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Challenging"),
-                      ]),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_3,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_3 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
                 ),
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_6,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_6 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Too Hard"),
-                      ]),
+                const Expanded(
+                  child: Text("Easy"),
+                ),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_4,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_4 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
+                ),
+                const Expanded(
+                  child: Text("Boring"),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_7,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_7 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Effective"),
-                      ]),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_5,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_5 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
                 ),
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_8,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_8 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Doesn't Work"),
-                      ]),
+                const Expanded(
+                  child: Text("Challenging"),
+                ),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_6,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_6 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
+                ),
+                const Expanded(
+                  child: Text("Too Hard"),
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
-                  width: 185,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Switch(
-                          // thumb color (round icon)
-                          activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
-                          activeTrackColor:
-                              Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
-                          inactiveThumbColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
-                          inactiveTrackColor:
-                              Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
-                          splashRadius: 50.0,
-                          // boolean variable value
-                          value: checkedValue_9,
-                          // changes the state of the switch
-                          onChanged: (value) => setState(() {
-                            checkedValue_9 = value;
-                            widget.callbackForComment(
-                                widget.task,
-                                checkedValue_1,
-                                checkedValue_2,
-                                checkedValue_3,
-                                checkedValue_4,
-                                checkedValue_5,
-                                checkedValue_6,
-                                checkedValue_7,
-                                checkedValue_8,
-                                checkedValue_9,
-                                _currentSliderValue.toInt(),
-                                _currentFollowUpCommentValue.toInt(),
-                                commentController.text);
-                          }),
-                        ),
-                        const Text("Progressive"),
-                      ]),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_7,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_7 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
                 ),
-                const SizedBox(width: 185),
+                const Expanded(
+                  child: Text("Effective"),
+                ),
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_8,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_8 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
+                ),
+                const Expanded(
+                  child: Text("Doesn't Work"),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: Switch(
+                    // thumb color (round icon)
+                    activeColor: Constants.TOGGLE_BUTTON_ACTIVE_COLOR,
+                    activeTrackColor:
+                        Constants.TOGGLE_BUTTON_ACTIVE_TRACK_COLOR,
+                    inactiveThumbColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_THUMB_COLOR,
+                    inactiveTrackColor:
+                        Constants.TOGGLE_BUTTON_INACTIVE_TRACK_COLOR,
+                    splashRadius: 50.0,
+                    // boolean variable value
+                    value: checkedValue_9,
+                    // changes the state of the switch
+                    onChanged: (value) => setState(() {
+                      checkedValue_9 = value;
+                      widget.callbackForComment(
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text);
+                    }),
+                  ),
+                ),
+                const Expanded(
+                  child: Text("Progressive"),
+                ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
               ],
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
+              padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
               child: TextField(
                 controller: commentController,
                 decoration: const InputDecoration(
