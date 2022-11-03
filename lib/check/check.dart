@@ -206,6 +206,7 @@ class _CheckPageState extends State<CheckPage> {
     bool checkVal12,
     bool checkVal13,
     String comment,
+    bool isValidTask,
   ) {
     String reason = '';
     bool flag = false;
@@ -277,21 +278,10 @@ class _CheckPageState extends State<CheckPage> {
     //Update myTaskList
     FailureReason newReason = FailureReason(task: task, reason: reason);
     failureReasonList[index] = newReason;
-    isValidForTaskList[index] = checkVal1 |
-        checkVal2 |
-        checkVal3 |
-        checkVal4 |
-        checkVal5 |
-        checkVal6 |
-        checkVal7 |
-        checkVal8 |
-        checkVal9 |
-        checkVal10 |
-        checkVal11 |
-        checkVal12 |
-        (checkVal13 & comment.isNotEmpty);
+    isValidForTaskList[index] = isValidTask;
+
     isValid = !isValidForTaskList.contains(false);
-    print(isValid);
+
     // print("Updated $index th TaskComment.");
   }
 
@@ -369,21 +359,35 @@ class _CheckPageState extends State<CheckPage> {
                       myCallback: taskAndCallback.callback);
                 }).toList(),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
-                  child: TextField(
-                    controller: commentController,
-                    autofocus: true,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText:
-                          'Use this box to record your thoughts/feelings along this journey! You can also use it to send the team @ Health Guider feedback. We want to make this an exceptional experience!',
-                      labelText:
+                    padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+                    child: Column(
+                      children: [
+                        const Text(
                           'Do you like to share any thoughts or feelings today?',
-                    ),
-                    keyboardType: TextInputType.multiline,
-                    maxLines: 6,
-                  ),
-                ),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: Constants.CHECK_TASK_FONT,
+                            fontWeight: FontWeight.bold,
+                            color: Constants.CHECK_TASK_TEXT_COLOR,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextField(
+                          controller: commentController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText:
+                                'Use this box to record your thoughts/feelings along this journey! You can also use it to send the team @ Health Guider feedback. We want to make this an exceptional experience!',
+                            // labelText:
+                            //     'Do you like to share any thoughts or feelings today?',
+                          ),
+                          keyboardType: TextInputType.multiline,
+                          maxLines: 6,
+                        ),
+                      ],
+                    )),
                 const SizedBox(height: 30),
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -415,16 +419,18 @@ class _CheckPageState extends State<CheckPage> {
                                         isExtraQuestion: isExtraQuestion)),
                               );
                             } else {
-                              Fluttertoast.showToast(
-                                msg:
-                                    "please mark the closest reason or reasons for not doing the task",
-                                toastLength: Toast.LENGTH_SHORT,
-                                timeInSecForIosWeb: 1,
-                                backgroundColor:
-                                    const Color.fromARGB(255, 143, 141, 141),
-                                textColor: Colors.white,
-                                fontSize: 16.0,
-                              );
+                              setState(() {
+                                Fluttertoast.showToast(
+                                  msg:
+                                      "please mark the closest reason or reasons for not doing the task",
+                                  toastLength: Toast.LENGTH_SHORT,
+                                  timeInSecForIosWeb: 1,
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 143, 141, 141),
+                                  textColor: Colors.white,
+                                  fontSize: 16.0,
+                                );
+                              });
                             }
                           },
                           child: const Text(
@@ -450,16 +456,18 @@ class _CheckPageState extends State<CheckPage> {
                                       isSubmitWithNoComments = true;
                                     });
                                   } else {
-                                    Fluttertoast.showToast(
-                                      msg:
-                                          "please mark the closest reason or reasons for not doing the task",
-                                      toastLength: Toast.LENGTH_SHORT,
-                                      timeInSecForIosWeb: 1,
-                                      backgroundColor: const Color.fromARGB(
-                                          255, 143, 141, 141),
-                                      textColor: Colors.white,
-                                      fontSize: 16.0,
-                                    );
+                                    setState(() {
+                                      Fluttertoast.showToast(
+                                        msg:
+                                            "please mark the closest reason or reasons for not doing the task",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        timeInSecForIosWeb: 1,
+                                        backgroundColor: const Color.fromARGB(
+                                            255, 143, 141, 141),
+                                        textColor: Colors.white,
+                                        fontSize: 16.0,
+                                      );
+                                    });
                                   }
                                 })
                               : null,

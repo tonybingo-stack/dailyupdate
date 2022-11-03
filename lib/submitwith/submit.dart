@@ -195,6 +195,7 @@ class _SubmitPageState extends State<SubmitPage> {
     int currentSliderVal,
     int _currentFollowUpCommentValue,
     String comment,
+    bool isValidTask,
   ) {
     TaskComment myComment = TaskComment(
         task, currentSliderVal, '', comment, _currentFollowUpCommentValue);
@@ -250,17 +251,11 @@ class _SubmitPageState extends State<SubmitPage> {
     //Update myTaskList
     int index = widget.myTasksList.indexOf(task);
     myTaskCommentList[index] = myComment;
-    isValidForTaskList[index] = (currentSliderVal != 0) &
-        (checkVal1 |
-            checkVal2 |
-            checkVal3 |
-            checkVal4 |
-            checkVal5 |
-            checkVal6 |
-            checkVal7 |
-            checkVal8 |
-            checkVal9);
+    isValidForTaskList[index] = isValidTask;
+
     isValid = !isValidForTaskList.contains(false);
+    print(isValid);
+    print(isValidForTaskList);
   }
 
   @override

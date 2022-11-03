@@ -39,12 +39,38 @@ class _CommentState extends State<Comment> {
   bool isMore = false;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  bool isValidNow() {
+    return (checkedValue_1 |
+        checkedValue_2 |
+        checkedValue_3 |
+        checkedValue_4 |
+        checkedValue_5 |
+        checkedValue_6 |
+        checkedValue_7 |
+        checkedValue_8 |
+        checkedValue_9 |
+        checkedValue_10 |
+        checkedValue_11 |
+        checkedValue_12 |
+        (checkedValue_13 & commentController.text.isNotEmpty));
+  }
+
+  @override
   Widget build(BuildContext context) {
     //create a CardController
     int index = widget.index;
     // Function widget.myCallback = widget.callback;
     String task = widget.task;
-
+    bool isValid = isValidNow();
     return Padding(
       padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
       child: Container(
@@ -78,7 +104,9 @@ class _CommentState extends State<Comment> {
                 Container(
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Constants.GRAPH_TITLE_BORDER_COLOR,
+                      color: isValid
+                          ? Constants.CHECK_BORDER_COLOR
+                          : Constants.CHECK_BORDER_ERROR_COLOR,
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                   ),
@@ -103,6 +131,7 @@ class _CommentState extends State<Comment> {
                               // changes the state of the switch
                               onChanged: (value) => setState(() {
                                 checkedValue_1 = value;
+                                isValid = isValidNow();
                                 widget.myCallback(
                                   index,
                                   task,
@@ -120,6 +149,7 @@ class _CommentState extends State<Comment> {
                                   checkedValue_12,
                                   checkedValue_13,
                                   commentController.text,
+                                  isValid,
                                 );
                               }),
                             ),
@@ -143,6 +173,7 @@ class _CommentState extends State<Comment> {
                               // changes the state of the switch
                               onChanged: (value) => setState(() {
                                 checkedValue_2 = value;
+                                isValid = isValidNow();
                                 widget.myCallback(
                                   index,
                                   task,
@@ -160,6 +191,7 @@ class _CommentState extends State<Comment> {
                                   checkedValue_12,
                                   checkedValue_13,
                                   commentController.text,
+                                  isValid,
                                 );
                               }),
                             ),
@@ -188,6 +220,7 @@ class _CommentState extends State<Comment> {
                               // changes the state of the switch
                               onChanged: (value) => setState(() {
                                 checkedValue_3 = value;
+                                isValid = isValidNow();
                                 widget.myCallback(
                                   index,
                                   task,
@@ -205,6 +238,7 @@ class _CommentState extends State<Comment> {
                                   checkedValue_12,
                                   checkedValue_13,
                                   commentController.text,
+                                  isValid,
                                 );
                               }),
                             ),
@@ -228,6 +262,7 @@ class _CommentState extends State<Comment> {
                               // changes the state of the switch
                               onChanged: (value) => setState(() {
                                 checkedValue_4 = value;
+                                isValid = isValidNow();
                                 widget.myCallback(
                                   index,
                                   task,
@@ -245,6 +280,7 @@ class _CommentState extends State<Comment> {
                                   checkedValue_12,
                                   checkedValue_13,
                                   commentController.text,
+                                  isValid,
                                 );
                               }),
                             ),
@@ -273,6 +309,7 @@ class _CommentState extends State<Comment> {
                               // changes the state of the switch
                               onChanged: (value) => setState(() {
                                 checkedValue_5 = value;
+                                isValid = isValidNow();
                                 widget.myCallback(
                                   index,
                                   task,
@@ -290,6 +327,7 @@ class _CommentState extends State<Comment> {
                                   checkedValue_12,
                                   checkedValue_13,
                                   commentController.text,
+                                  isValid,
                                 );
                               }),
                             ),
@@ -313,6 +351,7 @@ class _CommentState extends State<Comment> {
                               // changes the state of the switch
                               onChanged: (value) => setState(() {
                                 checkedValue_6 = value;
+                                isValid = isValidNow();
                                 widget.myCallback(
                                   index,
                                   task,
@@ -330,6 +369,7 @@ class _CommentState extends State<Comment> {
                                   checkedValue_12,
                                   checkedValue_13,
                                   commentController.text,
+                                  isValid,
                                 );
                               }),
                             ),
@@ -360,6 +400,7 @@ class _CommentState extends State<Comment> {
                                     // changes the state of the switch
                                     onChanged: (value) => setState(() {
                                       checkedValue_7 = value;
+                                      isValid = isValidNow();
                                       widget.myCallback(
                                         index,
                                         task,
@@ -377,6 +418,7 @@ class _CommentState extends State<Comment> {
                                         checkedValue_12,
                                         checkedValue_13,
                                         commentController.text,
+                                        isValid,
                                       );
                                     }),
                                   ),
@@ -401,6 +443,7 @@ class _CommentState extends State<Comment> {
                                     // changes the state of the switch
                                     onChanged: (value) => setState(() {
                                       checkedValue_8 = value;
+                                      isValid = isValidNow();
                                       widget.myCallback(
                                         index,
                                         task,
@@ -418,6 +461,7 @@ class _CommentState extends State<Comment> {
                                         checkedValue_12,
                                         checkedValue_13,
                                         commentController.text,
+                                        isValid,
                                       );
                                     }),
                                   ),
@@ -449,6 +493,7 @@ class _CommentState extends State<Comment> {
                                     // changes the state of the switch
                                     onChanged: (value) => setState(() {
                                       checkedValue_9 = value;
+                                      isValid = isValidNow();
                                       widget.myCallback(
                                         index,
                                         task,
@@ -466,6 +511,7 @@ class _CommentState extends State<Comment> {
                                         checkedValue_12,
                                         checkedValue_13,
                                         commentController.text,
+                                        isValid,
                                       );
                                     }),
                                   ),
@@ -490,6 +536,7 @@ class _CommentState extends State<Comment> {
                                     // changes the state of the switch
                                     onChanged: (value) => setState(() {
                                       checkedValue_10 = value;
+                                      isValid = isValidNow();
                                       widget.myCallback(
                                         index,
                                         task,
@@ -507,6 +554,7 @@ class _CommentState extends State<Comment> {
                                         checkedValue_12,
                                         checkedValue_13,
                                         commentController.text,
+                                        isValid,
                                       );
                                     }),
                                   ),
@@ -538,6 +586,7 @@ class _CommentState extends State<Comment> {
                                     // changes the state of the switch
                                     onChanged: (value) => setState(() {
                                       checkedValue_11 = value;
+                                      isValid = isValidNow();
                                       widget.myCallback(
                                         index,
                                         task,
@@ -555,6 +604,7 @@ class _CommentState extends State<Comment> {
                                         checkedValue_12,
                                         checkedValue_13,
                                         commentController.text,
+                                        isValid,
                                       );
                                     }),
                                   ),
@@ -579,6 +629,7 @@ class _CommentState extends State<Comment> {
                                     // changes the state of the switch
                                     onChanged: (value) => setState(() {
                                       checkedValue_12 = value;
+                                      isValid = isValidNow();
                                       widget.myCallback(
                                         index,
                                         task,
@@ -596,6 +647,7 @@ class _CommentState extends State<Comment> {
                                         checkedValue_12,
                                         checkedValue_13,
                                         commentController.text,
+                                        isValid,
                                       );
                                     }),
                                   ),
@@ -625,6 +677,7 @@ class _CommentState extends State<Comment> {
                               // changes the state of the switch
                               onChanged: (value) => setState(() {
                                 checkedValue_13 = value;
+                                isValid = isValidNow();
                                 widget.myCallback(
                                   index,
                                   task,
@@ -642,6 +695,7 @@ class _CommentState extends State<Comment> {
                                   checkedValue_12,
                                   checkedValue_13,
                                   commentController.text,
+                                  isValid,
                                 );
                               }),
                             ),
@@ -682,7 +736,8 @@ class _CommentState extends State<Comment> {
                                 ),
                                 // keyboardType: TextInputType.multiline,
                                 // maxLines: 6,
-                                onChanged: (value) {
+                                onChanged: (value) => setState(() {
+                                  isValid = isValidNow();
                                   widget.myCallback(
                                     index,
                                     task,
@@ -700,8 +755,9 @@ class _CommentState extends State<Comment> {
                                     checkedValue_12,
                                     checkedValue_13,
                                     commentController.text,
+                                    isValid,
                                   );
-                                },
+                                }),
                               ),
                             )
                           : const SizedBox(),

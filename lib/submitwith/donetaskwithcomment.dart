@@ -47,15 +47,31 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
     comment = '';
   }
 
+  bool isValidNow() {
+    return (_currentSliderValue != 0) &
+        (checkedValue_1 |
+            checkedValue_2 |
+            checkedValue_3 |
+            checkedValue_4 |
+            checkedValue_5 |
+            checkedValue_6 |
+            checkedValue_7 |
+            checkedValue_8 |
+            checkedValue_9);
+  }
+
   @override
   Widget build(BuildContext context) {
     //create a CardController
+    bool isValid = isValidNow();
 
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 15),
       decoration: BoxDecoration(
         border: Border.all(
-          color: Constants.SUBMIT_BORDER_COLOR,
+          color: isValid
+              ? Constants.CHECK_BORDER_COLOR
+              : Constants.CHECK_BORDER_ERROR_COLOR,
         ),
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         gradient: const LinearGradient(
@@ -126,20 +142,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
               onChanged: (double value) {
                 setState(() {
                   _currentSliderValue = value;
+                  isValid = isValidNow();
                   widget.callbackForComment(
-                      widget.task,
-                      checkedValue_1,
-                      checkedValue_2,
-                      checkedValue_3,
-                      checkedValue_4,
-                      checkedValue_5,
-                      checkedValue_6,
-                      checkedValue_7,
-                      checkedValue_8,
-                      checkedValue_9,
-                      _currentSliderValue.toInt(),
-                      _currentFollowUpCommentValue.toInt(),
-                      commentController.text);
+                    widget.task,
+                    checkedValue_1,
+                    checkedValue_2,
+                    checkedValue_3,
+                    checkedValue_4,
+                    checkedValue_5,
+                    checkedValue_6,
+                    checkedValue_7,
+                    checkedValue_8,
+                    checkedValue_9,
+                    _currentSliderValue.toInt(),
+                    _currentFollowUpCommentValue.toInt(),
+                    commentController.text,
+                    isValid,
+                  );
                 });
               },
             ),
@@ -180,20 +199,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     onChanged: (double value) {
                       setState(() {
                         _currentFollowUpCommentValue = value;
+                        isValid = isValidNow();
                         widget.callbackForComment(
-                            widget.task,
-                            checkedValue_1,
-                            checkedValue_2,
-                            checkedValue_3,
-                            checkedValue_4,
-                            checkedValue_5,
-                            checkedValue_6,
-                            checkedValue_7,
-                            checkedValue_8,
-                            checkedValue_9,
-                            _currentSliderValue.toInt(),
-                            _currentFollowUpCommentValue.toInt(),
-                            commentController.text);
+                          widget.task,
+                          checkedValue_1,
+                          checkedValue_2,
+                          checkedValue_3,
+                          checkedValue_4,
+                          checkedValue_5,
+                          checkedValue_6,
+                          checkedValue_7,
+                          checkedValue_8,
+                          checkedValue_9,
+                          _currentSliderValue.toInt(),
+                          _currentFollowUpCommentValue.toInt(),
+                          commentController.text,
+                          isValid,
+                        );
                       });
                     },
                   )
@@ -247,20 +269,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_1 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -283,20 +308,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_2 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -324,20 +352,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_3 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -360,20 +391,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_4 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -401,20 +435,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_5 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -437,20 +474,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_6 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -478,20 +518,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_7 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -514,20 +557,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_8 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),
@@ -555,20 +601,23 @@ class _DoneTaskWithCommentState extends State<DoneTaskWithComment> {
                     // changes the state of the switch
                     onChanged: (value) => setState(() {
                       checkedValue_9 = value;
+                      isValid = isValidNow();
                       widget.callbackForComment(
-                          widget.task,
-                          checkedValue_1,
-                          checkedValue_2,
-                          checkedValue_3,
-                          checkedValue_4,
-                          checkedValue_5,
-                          checkedValue_6,
-                          checkedValue_7,
-                          checkedValue_8,
-                          checkedValue_9,
-                          _currentSliderValue.toInt(),
-                          _currentFollowUpCommentValue.toInt(),
-                          commentController.text);
+                        widget.task,
+                        checkedValue_1,
+                        checkedValue_2,
+                        checkedValue_3,
+                        checkedValue_4,
+                        checkedValue_5,
+                        checkedValue_6,
+                        checkedValue_7,
+                        checkedValue_8,
+                        checkedValue_9,
+                        _currentSliderValue.toInt(),
+                        _currentFollowUpCommentValue.toInt(),
+                        commentController.text,
+                        isValid,
+                      );
                     }),
                   ),
                 ),

@@ -34,7 +34,7 @@ class CardPage extends StatefulWidget {
 }
 
 class _CardPageState extends State<CardPage> {
-  int counter = 3;
+  int counter = 1;
   @override
   void initState() {
     super.initState();
@@ -101,8 +101,6 @@ class _CardPageState extends State<CardPage> {
               //add the first 3 cards
               items: [
                 CardView(text: myTaskList[0]),
-                CardView(text: myTaskList[1]),
-                CardView(text: myTaskList[2]),
               ],
               onCardSwiped: (dir, index, widget) {
                 // Add the next card
