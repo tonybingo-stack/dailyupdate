@@ -73,12 +73,12 @@ class _CheckPageState extends State<CheckPage> {
               3 &&
           !widget.myTaskDetailsList[i].data.submitWithComment) {
         submitWithComment = true;
-        print("here");
+        // print("here");
       }
       if (!widget.myTaskDetailsList[i].data.filledForFollowUp &&
-          widget.yesTaskList.contains(widget.myTasksList[i])) {
+          widget.myTaskDetailsList[i].data.followUp) {
         submitWithComment = true;
-        print("there");
+        // print("there");
         isExtraQuestion = true;
       }
       if (widget.noTaskList.contains(widget.myTasksList[i])) {
