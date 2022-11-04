@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 class Past7Data {
   final String status;
   final String message;
@@ -19,15 +21,11 @@ class Past7Data {
 }
 
 class EvalFollow {
-  // ignore: non_constant_identifier_names
   final String eval_date;
-  // ignore: non_constant_identifier_names
   final String follow_rec;
 
   const EvalFollow({
-    // ignore: non_constant_identifier_names
     required this.eval_date,
-    // ignore: non_constant_identifier_names
     required this.follow_rec,
   });
 

@@ -73,26 +73,27 @@ class _GraphPageState extends State<GraphPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<EvalFollow> myEvalFollowList = [];
-    for (int i = 0; i < widget.myPast7Data.data.length; i++) {
-      myEvalFollowList.add(EvalFollow.fromJson(widget.myPast7Data.data[i]));
-    }
+    if (widget.myPast7Data.data.length > 0) {
+      List<EvalFollow> myEvalFollowList = [];
+      for (int i = 0; i < widget.myPast7Data.data.length; i++) {
+        myEvalFollowList.add(EvalFollow.fromJson(widget.myPast7Data.data[i]));
+      }
 
-    DateTime dateOrigin = DateTime.parse(myEvalFollowList[0].eval_date);
+      DateTime dateOrigin = DateTime.parse(myEvalFollowList[0].eval_date);
 
-    for (int i = 0; i < myEvalFollowList.length; i++) {
-      DateTime dateNow = DateTime.parse(myEvalFollowList[i].eval_date);
-      int index = dateNow.difference(dateOrigin).inDays;
+      for (int i = 0; i < myEvalFollowList.length; i++) {
+        DateTime dateNow = DateTime.parse(myEvalFollowList[i].eval_date);
+        int index = dateNow.difference(dateOrigin).inDays;
 
-      if (myEvalFollowList[i].follow_rec == "Yes") {
-        taskCompletedCount++;
-        followChartData[index].y = followChartData[index].y + 1;
-      } else {
-        taskNotFollowedCount++;
-        notFollowChartData[index].y = notFollowChartData[index].y + 1;
+        if (myEvalFollowList[i].follow_rec == "Yes") {
+          taskCompletedCount++;
+          followChartData[index].y = followChartData[index].y + 1;
+        } else {
+          taskNotFollowedCount++;
+          notFollowChartData[index].y = notFollowChartData[index].y + 1;
+        }
       }
     }
-
     return Padding(
       padding: const EdgeInsets.all(30),
       child: ListView(

@@ -166,12 +166,17 @@ class _MyHomePageState extends State<MyHomePage> {
     response = await http.post(Uri.parse(url),
         headers: {"Content-Type": "application/json"}, body: body);
 
-    if (response.statusCode != 200) {
+    if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
       // then parse the JSON.
-      throw Exception('Error while fetching past 7 days data');
+      Map<String, dynamic> res = jsonDecode(response.body);
+      if (res['status'] == "failed") {
+        print("There is no data for past 7 days.");
+        res['data'] = [];
+      }
+      myPast7Data = Past7Data.fromJson(res);
+      // throw Exception('Error while fetching past 7 days data');
     }
-    myPast7Data = Past7Data.fromJson(jsonDecode(response.body));
 
     print("Past 7 Data fetching Success!");
     // Call forth API to fetch data for alert
@@ -230,8 +235,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 } else if (snapshot.hasError) {
                   isLoading = false;
 
-                  return const NotFoundPage(
-                      message: "There is no goals defined for this user");
+                  return NotFoundPage(message: snapshot.error.toString());
                 }
 
                 // By default, show a loading spinner.

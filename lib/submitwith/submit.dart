@@ -330,66 +330,69 @@ class _SubmitPageState extends State<SubmitPage> {
             )
           : Padding(
               padding: const EdgeInsets.all(30),
-              child: ListView(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Constants.CHECK_BORDER_COLOR,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Constants.CHECK_BORDER_COLOR,
+                        ),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(10)),
+                        gradient: const LinearGradient(
+                          colors: [
+                            Constants.SUBMIT_BOX_TOP_COLOR,
+                            Constants.SUBMIT_BOX_BOTTOM_COLOR
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
                       ),
-                      borderRadius: const BorderRadius.all(Radius.circular(10)),
-                      gradient: const LinearGradient(
-                        colors: [
-                          Constants.SUBMIT_BOX_TOP_COLOR,
-                          Constants.SUBMIT_BOX_BOTTOM_COLOR
-                        ],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
+                      child: const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Text("Fill Recommended tasks Experience",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            )),
                       ),
                     ),
-                    child: const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Text("Fill Recommended tasks Experience",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          )),
+                    const SizedBox(height: 30),
+                    ...(myTaskAndCallback.map((taskandcallback) {
+                      return DoneTaskWithComment(
+                        task: taskandcallback.task,
+                        callbackForComment: taskandcallback.callback,
+                        isFollowUp: taskandcallback.isFollowUp,
+                        isExtraQuestion: taskandcallback.isExtraQuestion,
+                      );
+                    })).toList(),
+                    const SizedBox(height: 15),
+                    ElevatedButton(
+                      style: style,
+                      onPressed: () {
+                        if (isValid) {
+                          setState(() {
+                            isSubmitWithComment = true;
+                          });
+                        } else {
+                          Fluttertoast.showToast(
+                            msg: "please complete all field",
+                            toastLength: Toast.LENGTH_SHORT,
+                            timeInSecForIosWeb: 1,
+                            backgroundColor:
+                                const Color.fromARGB(255, 143, 141, 141),
+                            textColor: Colors.white,
+                            fontSize: 16.0,
+                          );
+                        }
+                      },
+                      child: const Text('Submit'),
                     ),
-                  ),
-                  const SizedBox(height: 30),
-                  ...(myTaskAndCallback.map((taskandcallback) {
-                    return DoneTaskWithComment(
-                      task: taskandcallback.task,
-                      callbackForComment: taskandcallback.callback,
-                      isFollowUp: taskandcallback.isFollowUp,
-                      isExtraQuestion: taskandcallback.isExtraQuestion,
-                    );
-                  })),
-                  const SizedBox(height: 15),
-                  ElevatedButton(
-                    style: style,
-                    onPressed: () {
-                      if (isValid) {
-                        setState(() {
-                          isSubmitWithComment = true;
-                        });
-                      } else {
-                        Fluttertoast.showToast(
-                          msg: "please complete all field",
-                          toastLength: Toast.LENGTH_SHORT,
-                          timeInSecForIosWeb: 1,
-                          backgroundColor:
-                              const Color.fromARGB(255, 143, 141, 141),
-                          textColor: Colors.white,
-                          fontSize: 16.0,
-                        );
-                      }
-                    },
-                    child: const Text('Submit'),
-                  ),
-                  const SizedBox(height: 30),
-                ],
+                    const SizedBox(height: 30),
+                  ],
+                ),
               ),
             ),
     );
