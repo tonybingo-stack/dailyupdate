@@ -117,12 +117,13 @@ class _GraphPageState extends State<GraphPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => CardPage(
-                          myInfo: widget.myInfo,
-                          myTasks: widget.myTasks,
-                          myTaskDetailsList: widget.myTaskDetailsList,
-                          mySuccessAlert: widget.mySuccessAlert,
-                        )),
+                  builder: (context) => CardPage(
+                    myInfo: widget.myInfo,
+                    myTasks: widget.myTasks,
+                    myTaskDetailsList: widget.myTaskDetailsList,
+                    mySuccessAlert: widget.mySuccessAlert,
+                  ),
+                ),
               );
             },
             child: const Text('Next'),

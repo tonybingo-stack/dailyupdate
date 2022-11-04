@@ -136,20 +136,21 @@ class _CardPageState extends State<CardPage> {
                       DateFormat("hh-mm-ss").format(DateTime.now());
                 } else if (dir == Direction.down) {}
 
-                if (index == myTaskList.length - 1) {
+                if (index >= myTaskList.length - 1) {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => CheckPage(
-                              myInfo: myInfo,
-                              noTaskList: noTaskList,
-                              yesTaskList: yesTaskList,
-                              naTaskList: naTaskList,
-                              myTaskDetailsList: myTaskDetailsList,
-                              myTasksList: myTaskList,
-                              myTaskStartTime: myTaskStartTime,
-                              mySuccessAlert: mySuccessAlert,
-                            )),
+                      builder: (context) => CheckPage(
+                        myInfo: myInfo,
+                        noTaskList: noTaskList,
+                        yesTaskList: yesTaskList,
+                        naTaskList: naTaskList,
+                        myTaskDetailsList: myTaskDetailsList,
+                        myTasksList: myTaskList,
+                        myTaskStartTime: myTaskStartTime,
+                        mySuccessAlert: mySuccessAlert,
+                      ),
+                    ),
                   );
                 }
               },
