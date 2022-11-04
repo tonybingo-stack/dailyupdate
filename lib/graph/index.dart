@@ -73,7 +73,7 @@ class _GraphPageState extends State<GraphPage> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.myPast7Data.data.length > 0) {
+    if (widget.myPast7Data.data.isNotEmpty) {
       List<EvalFollow> myEvalFollowList = [];
       for (int i = 0; i < widget.myPast7Data.data.length; i++) {
         myEvalFollowList.add(EvalFollow.fromJson(widget.myPast7Data.data[i]));
