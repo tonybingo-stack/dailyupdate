@@ -97,48 +97,39 @@ class _GraphPageState extends State<GraphPage> {
       padding: const EdgeInsets.all(30),
       child: ListView(
         shrinkWrap: true,
-        // scrollDirection: Axis.vertical,
+        scrollDirection: Axis.vertical,
         children: [
-          Expanded(
-            child: MyTitle(
-                taskCompletedCount: taskCompletedCount,
-                taskNotFollowedCount: taskNotFollowedCount),
-          ),
-          const Expanded(
-              child: SizedBox(
+          MyTitle(
+              taskCompletedCount: taskCompletedCount,
+              taskNotFollowedCount: taskNotFollowedCount),
+          const SizedBox(
             height: 30,
-          )),
-          Expanded(
-            child: MyGraph(
-                followChartData: followChartData,
-                notFollowChartData: notFollowChartData),
           ),
-          const Expanded(
-              child: SizedBox(
+          MyGraph(
+              followChartData: followChartData,
+              notFollowChartData: notFollowChartData),
+          const SizedBox(
             height: 30,
-          )),
-          Expanded(
-            child: ElevatedButton(
-              style: style,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => CardPage(
-                            myInfo: widget.myInfo,
-                            myTasks: widget.myTasks,
-                            myTaskDetailsList: widget.myTaskDetailsList,
-                            mySuccessAlert: widget.mySuccessAlert,
-                          )),
-                );
-              },
-              child: const Text('Next'),
-            ),
           ),
-          const Expanded(
-              child: SizedBox(
+          ElevatedButton(
+            style: style,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CardPage(
+                          myInfo: widget.myInfo,
+                          myTasks: widget.myTasks,
+                          myTaskDetailsList: widget.myTaskDetailsList,
+                          mySuccessAlert: widget.mySuccessAlert,
+                        )),
+              );
+            },
+            child: const Text('Next'),
+          ),
+          const SizedBox(
             height: 30,
-          )),
+          ),
         ],
       ),
     );
