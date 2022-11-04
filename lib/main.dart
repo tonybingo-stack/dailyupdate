@@ -321,9 +321,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             const SizedBox(height: 30),
                             ElevatedButton(
                               style: style,
-                              onPressed: () {
-                                setState(() => isLoading = true);
-                              },
+                              onPressed: null,
                               child: const Text('Search'),
                             ),
                           ],

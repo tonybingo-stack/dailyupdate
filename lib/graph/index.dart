@@ -1,5 +1,6 @@
 import 'package:dailyupdate/models/userinfo.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import './graph.dart';
 import './title.dart';
 import '../cardview/cardpage.dart';
@@ -96,6 +97,7 @@ class _GraphPageState extends State<GraphPage> {
       padding: const EdgeInsets.all(30),
       child: ListView(
         shrinkWrap: true,
+        // scrollDirection: Axis.vertical,
         children: [
           Expanded(
             child: MyTitle(

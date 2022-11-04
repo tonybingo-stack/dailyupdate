@@ -16,12 +16,16 @@ class CardView extends StatelessWidget {
         color: Constants.TASK_BACK_COLOR,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: Center(
-          child: Text(text,
-              style: const TextStyle(
-                color: Constants.TASK_TEXT_COLOR,
-                fontSize: Constants.TASK_TEXT_FONT,
-              )),
+        child: Padding(
+          padding: const EdgeInsets.all(30),
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: Constants.TASK_TEXT_COLOR,
+              fontSize: Constants.TASK_TEXT_FONT,
+            ),
+          ),
         ),
       ),
     ));

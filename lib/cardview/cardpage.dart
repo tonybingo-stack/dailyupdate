@@ -34,7 +34,6 @@ class CardPage extends StatefulWidget {
 }
 
 class _CardPageState extends State<CardPage> {
-  int counter = 1;
   @override
   void initState() {
     super.initState();
@@ -60,7 +59,7 @@ class _CardPageState extends State<CardPage> {
     List<String> myTaskStartTime = List<String>.filled(myTaskList.length, '');
 
     UserInfo myInfo = widget.myInfo;
-
+    int counter = myTaskList.length > 2 ? 3 : myTaskList.length;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -99,9 +98,20 @@ class _CardPageState extends State<CardPage> {
               cardController: cardController,
               context: context,
               //add the first 3 cards
-              items: [
-                CardView(text: myTaskList[0]),
-              ],
+              items: myTaskList.length == 1
+                  ? [
+                      CardView(text: myTaskList[0]),
+                    ]
+                  : (myTaskList.length == 2
+                      ? [
+                          CardView(text: myTaskList[0]),
+                          CardView(text: myTaskList[1]),
+                        ]
+                      : [
+                          CardView(text: myTaskList[0]),
+                          CardView(text: myTaskList[1]),
+                          CardView(text: myTaskList[2]),
+                        ]),
               onCardSwiped: (dir, index, widget) {
                 // Add the next card
                 if (counter < myTaskList.length) {

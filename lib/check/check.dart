@@ -400,39 +400,46 @@ class _CheckPageState extends State<CheckPage> {
                         flex: 3,
                         child: ElevatedButton(
                           style: style,
-                          onPressed: () {
-                            if (isValid) {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SubmitPage(
-                                        myInfo: myInfo,
-                                        yesTaskList: yesTaskList,
-                                        myTaskDetailsList: myTaskDetailsList,
-                                        myTasksList: myTasksList,
-                                        naTaskList: naTaskList,
-                                        noTaskList: noTaskList,
-                                        myTaskStartTime: widget.myTaskStartTime,
-                                        failureReasonList: failureReasonList,
-                                        dailyComment: commentController.text,
-                                        mySuccessAlert: mySuccessAlert,
-                                        isExtraQuestion: isExtraQuestion)),
-                              );
-                            } else {
-                              setState(() {
-                                Fluttertoast.showToast(
-                                  msg:
-                                      "please mark the closest reason or reasons for not doing the task",
-                                  toastLength: Toast.LENGTH_SHORT,
-                                  timeInSecForIosWeb: 1,
-                                  backgroundColor:
-                                      const Color.fromARGB(255, 143, 141, 141),
-                                  textColor: Colors.white,
-                                  fontSize: 16.0,
-                                );
-                              });
-                            }
-                          },
+                          onPressed: submitWithComment
+                              ? (() {
+                                  if (isValid) {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SubmitPage(
+                                              myInfo: myInfo,
+                                              yesTaskList: yesTaskList,
+                                              myTaskDetailsList:
+                                                  myTaskDetailsList,
+                                              myTasksList: myTasksList,
+                                              naTaskList: naTaskList,
+                                              noTaskList: noTaskList,
+                                              myTaskStartTime:
+                                                  widget.myTaskStartTime,
+                                              failureReasonList:
+                                                  failureReasonList,
+                                              dailyComment:
+                                                  commentController.text,
+                                              mySuccessAlert: mySuccessAlert,
+                                              isExtraQuestion:
+                                                  isExtraQuestion)),
+                                    );
+                                  } else {
+                                    setState(() {
+                                      Fluttertoast.showToast(
+                                        msg:
+                                            "please mark the closest reason or reasons for not doing the task",
+                                        toastLength: Toast.LENGTH_SHORT,
+                                        timeInSecForIosWeb: 1,
+                                        backgroundColor: const Color.fromARGB(
+                                            255, 143, 141, 141),
+                                        textColor: Colors.white,
+                                        fontSize: 16.0,
+                                      );
+                                    });
+                                  }
+                                })
+                              : null,
                           child: const Text(
                             'Submit with Comments',
                             textAlign: TextAlign.center,
