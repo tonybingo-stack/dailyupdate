@@ -64,6 +64,7 @@ class _CheckPageState extends State<CheckPage> {
     isExtraQuestion = false;
     failureReasonList = [];
     commentController.text = '';
+    if (widget.noTaskList.isEmpty) isValid = true;
     int index = 0;
     for (int i = 0; i < widget.myTasksList.length; i++) {
       if (widget.myTaskDetailsList[i].data.yesCount +
@@ -72,10 +73,12 @@ class _CheckPageState extends State<CheckPage> {
               3 &&
           !widget.myTaskDetailsList[i].data.submitWithComment) {
         submitWithComment = true;
+        print("here");
       }
       if (!widget.myTaskDetailsList[i].data.filledForFollowUp &&
           widget.yesTaskList.contains(widget.myTasksList[i])) {
         submitWithComment = true;
+        print("there");
         isExtraQuestion = true;
       }
       if (widget.noTaskList.contains(widget.myTasksList[i])) {
